@@ -14,7 +14,7 @@ let currentValue = '';
 
 let onBtn = document.getElementById('on-off')
 output.style.backgroundColor = "gray"
-onBtn.onclick = () => {
+onBtn.onmousedown = () => {
     if (output.style.backgroundColor === "white") {
         output.style.backgroundColor = "gray"
         cats.pause()
@@ -27,12 +27,28 @@ onBtn.onclick = () => {
 }
 
 let ce = document.getElementById('ce')
-ce.onclick = () => {
+ce.onmousedown = () => {
     firstNum = '';
     secondNum = '';
     output.value = '';
     operation = '';
     currentValue = '';
+}
+
+let allButtons = document.getElementsByClassName('btn-primary');
+for (let i = 0; i < allButtons.length; i++) {
+    allButtons[i].onmouseenter = () => {
+        allButtons[i].style.backgroundColor = "rgb(224, 178, 85)"
+    }
+    allButtons[i].ontouchstart = () => {
+        allButtons[i].style.backgroundColor = "rgb(224, 178, 85)"
+    }
+    allButtons[i].onmouseleave = () => {
+        allButtons[i].style.backgroundColor = "rgb(87, 87, 87)"
+    }
+    allButtons[i].ontouchend = () => {
+        allButtons[i].style.backgroundColor = "rgb(87, 87, 87)"
+    }
 }
 
 
@@ -47,7 +63,7 @@ function calculate() {
     //for elements in listButtons
     for (let i = 0; i < listButtons.length; i++) {
         //if text in the button digit or '.' add in to value of output (as string)
-        listButtons[i].onclick = () => {
+        listButtons[i].onmousedown = () => {
             currentValue += listButtons[i].innerText
             if (currentValue === '0') {
                 if (output.value != '') {
@@ -97,7 +113,7 @@ function calculate() {
 
     //Block for button '='
     let btnEqual = document.getElementById('equal')
-    btnEqual.onclick = () => {
+    btnEqual.onmousedown = () => {
         if (operation === '+') output.value = Number(firstNum) + Number(secondNum)
         else if (operation === '-') output.value = Number(firstNum) - Number(secondNum)
         else if (operation === '*') output.value = Number(firstNum) * Number(secondNum)

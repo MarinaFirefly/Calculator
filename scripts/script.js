@@ -42,6 +42,7 @@ for (let i = 0; i < allButtons.length; i++) {
     }
     allButtons[i].ontouchstart = () => {
         allButtons[i].style.backgroundColor = "rgb(224, 178, 85)"
+        setTimeout(()=> allButtons[i].style.backgroundColor = "rgb(87, 87, 87)", 1000)
     }
     allButtons[i].onmouseleave = () => {
         allButtons[i].style.backgroundColor = "rgb(87, 87, 87)"

@@ -1,7 +1,7 @@
 //Fistly we have value of output equals to ''. It's a string. 
 //Next step is adding values from buttons to output as string
-//When button of some operation is pressed code remebers output and make output field empty
-//When button '=' is pressed operation with existing output and value from the memory is done
+//First number is number before sign second number after it.
+//When button '=' is pressed operation entered in the input is done.
 
 //take from html document element with id "output"
 let output = document.getElementById('output');
